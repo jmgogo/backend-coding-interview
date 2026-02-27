@@ -1,0 +1,13 @@
+{
+  "name": "clever-backend",
+  "private": true,
+  "main": "index.ts",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
