@@ -11,6 +11,8 @@ RUN apt update \
     ca-certificates \
     # Install git
     git \
+    # install psql command line tool
+    postgresql-client \
     # Clean up apt cache and remove unused packages
     && apt auto-remove -y \
     && apt clean -y \
