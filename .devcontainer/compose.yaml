@@ -1,0 +1,28 @@
+# Visit the Docker compose reference guide for more information
+# https://docs.docker.com/compose/compose-file/
+
+services:
+  bun-devcontainer:
+    image: clever-devcontainer:development
+    container_name: bun-backend
+    hostname: clever
+    # build image from Dockerfile
+    build: .
+    volumes:
+      # bind files to container workspace for development
+      - ..:/home/bun/workspace
+
+  postgres-db:
+    image: postgres:18
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+
+volumes:
+  postgres-data:
+    name: clever-postgres-data
+    driver: local

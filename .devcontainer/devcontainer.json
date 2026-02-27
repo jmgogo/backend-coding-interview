@@ -1,0 +1,28 @@
+{
+    "name": "bun-postgres",
+    "dockerComposeFile": [
+        "./compose.yaml"
+    ],
+    "service": "bun-devcontainer",
+    "workspaceFolder": "/home/bun/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // Linting for Javascript and TypeScript
+                "dbaeumer.vscode-eslint",
+                // Code formatting
+                "esbenp.prettier-vscode",
+                // Spell checking
+                "streetsidesoftware.code-spell-checker",
+                // Make typeScript errors human-readable
+                "yoavbls.pretty-ts-errors",
+                // HTML/XML support
+                "formulahendry.auto-rename-tag",
+                "formulahendry.auto-close-tag",
+                // Bun language support
+                "oven.bun-vscode"
+            ]
+        }
+    },
+    "shutdownAction": "stopCompose"
+}
