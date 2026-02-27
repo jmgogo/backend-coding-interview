@@ -13,3 +13,11 @@ Open Docker Desktop to run the Docker daemon, a background process that manages 
 ---
 
 _Checkout the [bun docs](https://bun.sh/docs) or [devcontainer docs](https://containers.dev/overview) for more information!_
+
+## Test
+
+To run the test use:
+
+```bash
+bun run test
+```
