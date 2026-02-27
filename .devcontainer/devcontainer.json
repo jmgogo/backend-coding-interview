@@ -20,7 +20,9 @@
                 "formulahendry.auto-rename-tag",
                 "formulahendry.auto-close-tag",
                 // Bun language support
-                "oven.bun-vscode"
+                "oven.bun-vscode",
+                // CSV Support
+                "ReprEng.csv"
             ]
         }
     },
