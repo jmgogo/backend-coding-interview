@@ -21,3 +21,13 @@ To run the test use:
 ```bash
 bun run test
 ```
+
+## Server
+
+To run the server with hot-reloading:
+
+```sh
+bun run dev
+```
+
+open http://localhost:3000
