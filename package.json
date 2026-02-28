@@ -1,11 +1,10 @@
 {
   "name": "clever-backend",
   "private": true,
-  "main": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run --hot index.ts",
-    "prod": "bun run index.ts",
+    "dev": "bun run --hot server/index.ts",
+    "prod": "bun run server/index.ts",
     "test": "bun test"
   },
   "devDependencies": {
