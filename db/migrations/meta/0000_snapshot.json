@@ -1,0 +1,167 @@
+{
+  "id": "abf1393b-3899-42e9-8f0d-e5ec6cbe3d3c",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.photographers": {
+      "name": "photographers",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "profile_url": {
+          "name": "profile_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.photos": {
+      "name": "photos",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "width": {
+          "name": "width",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "height": {
+          "name": "height",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "url": {
+          "name": "url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "photographer_id": {
+          "name": "photographer_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "avg_color": {
+          "name": "avg_color",
+          "type": "varchar(7)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "alt": {
+          "name": "alt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "src_original": {
+          "name": "src_original",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_large2x": {
+          "name": "src_large2x",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_large": {
+          "name": "src_large",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_medium": {
+          "name": "src_medium",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_small": {
+          "name": "src_small",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_portrait": {
+          "name": "src_portrait",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_landscape": {
+          "name": "src_landscape",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "src_tiny": {
+          "name": "src_tiny",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "photos_photographer_id_photographers_id_fk": {
+          "name": "photos_photographer_id_photographers_id_fk",
+          "tableFrom": "photos",
+          "tableTo": "photographers",
+          "columnsFrom": [
+            "photographer_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
