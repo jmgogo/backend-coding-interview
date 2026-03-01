@@ -22,7 +22,9 @@
                 // Bun language support
                 "oven.bun-vscode",
                 // CSV Support
-                "ReprEng.csv"
+                "ReprEng.csv",
+                // Bruno API client,
+                "bruno-api-client.bruno"
             ]
         }
     },
