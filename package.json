@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "bun run --hot server/index.ts",
     "prod": "bun run server/index.ts",
+    "test": "bun test",
+    "db:seed": "bun run db/seed.ts",
+    "db:reset": "bun run db/reset.ts",
     "db:generate": "read -p 'Migration name: ' name && drizzle-kit generate --name=$name",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
@@ -12,6 +15,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "csv-parse": "^6.1.0",
     "drizzle-kit": "^0.31.9"
   },
   "peerDependencies": {
@@ -21,6 +25,7 @@
     "@hono/zod-validator": "^0.7.6",
     "@t3-oss/env-core": "^0.13.10",
     "drizzle-orm": "^0.45.1",
+    "drizzle-seed": "^0.3.1",
     "hono": "^4.12.3",
     "postgres": "^3.4.8",
     "zod": "^4.3.6"
