@@ -1,0 +1,23 @@
+meta {
+  name: Create User
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{v1}}/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "admin@clever.com",
+    "password": "s2jfd92l9v"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

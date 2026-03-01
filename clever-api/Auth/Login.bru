@@ -1,0 +1,40 @@
+meta {
+  name: Login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{v1}}/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "{{process.env.ADMIN_EMAIL}}",
+  "password": "{{process.env.ADMIN_PASS}}"
+  }
+}
+
+vars:pre-request {
+  v1: http://localhost:3000
+}
+
+script:pre-request {
+  // reset runtime variables
+  bru.deleteAllVars();
+}
+
+script:post-response {
+  // Save token to runtime if successful
+  if (res.body.token) {
+    bru.setVar("token", res.body.token);
+    console.log("success")
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
