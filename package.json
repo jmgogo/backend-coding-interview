@@ -15,6 +15,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.7.6",
     "@t3-oss/env-core": "^0.13.10",
     "drizzle-orm": "^0.45.1",
     "hono": "^4.12.3",
