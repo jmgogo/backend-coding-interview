@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "bun run --hot server/index.ts",
     "prod": "bun run server/index.ts",
-    "test": "bun test"
+    "db:generate": "read -p 'Migration name: ' name && drizzle-kit generate --name=$name",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {
     "@types/bun": "latest",

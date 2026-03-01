@@ -5,6 +5,10 @@
     ],
     "service": "bun-devcontainer",
     "workspaceFolder": "/home/bun/workspace",
+    "forwardPorts": [
+        // Forward port for drizzle studio
+        4983
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
