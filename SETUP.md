@@ -31,3 +31,36 @@ bun run dev
 ```
 
 open http://localhost:3000
+
+## Database Utils
+
+The database service is automatically spun up when you launch the devcontainer. For advanced control, you can run the vscode task to connect via the psql cli. For feature rich data insights, you can connect through drizzle-studio via:
+
+```sh
+bun run db:studio
+```
+
+Before loading data, you'll want to make sure that the database matches our project schema via:
+
+```sh
+bun run db:migrate
+```
+
+New migrations can be generated via changes to the schema under `db/schema/` with:
+
+```sh
+# Will prompt you to input a migration name
+bun run db:generate
+```
+
+To seed the database with data from `photos.csv` run:
+
+```sh
+bun run db:seed
+```
+
+To clear data from each table in the database run:
+
+```sh
+bun run db:reset
+```
