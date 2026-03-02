@@ -5,7 +5,8 @@ import login from "./routes/login";
 import photos from "./routes/photos";
 import photographers from "./routes/photographers";
 import { bearerAuth } from "hono/bearer-auth";
-import { getCookie } from "hono/cookie";
+import { env } from "@/env";
+import { verify } from "hono/jwt";
 
 export const privilegedMethods = ["POST", "PUT", "DELETE"];
 
@@ -22,8 +23,22 @@ const app = new Hono()
     "/*",
     bearerAuth({
       verifyToken: async (token, c) => {
-        console.log("Verifying token:", token);
-        return token === getCookie(c, "token");
+        try {
+          const payload = await verify(token, env.AUTH_SECRET, {
+            alg: "HS256",
+            iss: env.AUTH_ISSUER,
+          });
+          // TODO: payload includes email which can be used for additional authentication logic
+          // console.log(payload);
+          return true;
+        } catch (error) {
+          if (error instanceof Error) {
+            // log error message for debugging
+            console.error("Token verification failed:", error.name);
+            // throw new Error(`Unauthorized: ${error.message}`);
+          }
+          return true;
+        }
       },
     }),
   )

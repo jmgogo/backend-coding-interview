@@ -5,6 +5,7 @@ export const env = createEnv({
   server: {
     ADMIN_EMAIL: z.string(),
     ADMIN_PASS: z.string(),
+    AUTH_ISSUER: z.string(),
     AUTH_SECRET: z.string(),
     DATABASE_URL: z.url(),
   },
