@@ -1,16 +1,11 @@
-import {
-  describe,
-  test,
-  expect,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-} from "bun:test";
+import { describe, test, expect, beforeEach } from "bun:test";
+import { client } from "./setup";
 
 describe("photographers API", () => {
   // TODO setup and teardown for tests, e.g. start server, clear database, etc.
-  describe("GET /photographers", () => {
+  describe("GET /photographers", async () => {
+    const res = await client.photographers.$get();
+
     test.todo(
       "should return a list of all photographers / max amount",
       () => {},
@@ -19,7 +14,9 @@ describe("photographers API", () => {
       "should return an empty array when no photographers exist",
       () => {},
     );
-    test.todo("should return 200 status code", () => {});
+    test("should return 200 status code", () => {
+      expect(res.status).toBe(200);
+    });
   });
 
   describe("GET /photographers/:id", () => {

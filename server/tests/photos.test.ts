@@ -1,10 +1,14 @@
-import { describe, test, expect } from "bun:test";
+import { describe, test, expect, beforeEach } from "bun:test";
+import { client } from "./setup";
 
 describe("Photos API", () => {
-  describe("GET /photos", () => {
+  describe("GET /photos", async () => {
+    const res = await client.photos.$get();
     test.todo("should return a list of all photos", () => {});
     test.todo("should return an empty array when no photos exist", () => {});
-    test.todo("should return 200 status code", () => {});
+    test("should return 200 status code", () => {
+      expect(res.status).toBe(200);
+    });
   });
 
   describe("GET /photos/:id", () => {

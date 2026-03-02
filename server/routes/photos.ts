@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 
-export const photos = new Hono()
+const photos = new Hono()
   .get("/", (c) => {
     return c.text("List photos");
   })
